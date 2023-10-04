@@ -14,10 +14,14 @@ use PhpParser\Node\Stmt\Return_;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('nama', function(){
     return 'RIDHODIMAS';
+});
+
+Route::get("/", function(){
+    return view('login');
 });
