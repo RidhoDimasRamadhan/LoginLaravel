@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Stmt\Return_;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IdentitasController;
+use App\Http\Controllers\IdentitasMahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,13 @@ Route::get('nama', function(){
     return 'RIDHODIMAS';
 });
 
-Route::get("/", function(){
+Route::get("/login", function(){
     return view('login');
 });
+
+// Route::get('/identitas',function(){
+//     return view('identitas');
+// });
+
+Route::get('/identitas_tabel',[IdentitasController::class, 'identitasTabel']);
+Route::get('/identitas_Mahasiswa',[IdentitasMahasiswaController::class, 'Mahasiswa']);
