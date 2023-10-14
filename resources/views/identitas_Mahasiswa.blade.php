@@ -1,5 +1,30 @@
 @extends('templateHeader')
 
 @section('content')
-    <h1>nama ku adalah {{ $identitasMahasiswa_list }}</h1>
+
+<div class="container">
+    <div class="row">
+        <table class = "table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>NPM</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                @foreach ($identitasMahasiswa_list as $item)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $item['nama'] }}</td>
+                    <td>{{ $item['NPM'] }}</td>
+                </tr>
+                
+                @endforeach
+            </tbody>
+        </table>
+        
+    </div>
+</div>
 @endsection

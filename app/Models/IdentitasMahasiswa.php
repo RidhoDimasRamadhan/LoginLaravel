@@ -9,5 +9,5 @@ class IdentitasMahasiswa extends Model
 {
     use HasFactory;
     protected $table = 'identitas_mahasiswa';
-    protected $orimaryKey = 'id';
+    protected $primaryKey = 'id';
 }
