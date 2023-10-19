@@ -14,7 +14,7 @@
             </thead>
         
             <tbody>
-                @foreach ($identitasMahasiswa_list as $item)
+                @foreach ($studentList as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item['nama'] }}</td>

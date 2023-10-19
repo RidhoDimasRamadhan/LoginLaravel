@@ -16,12 +16,14 @@ class identitasMahasiswaSeeder extends Seeder
      */
     public function run()
     {
-        identitasMahasiswa::insert([
-            "nama" =>"Dimas Ramadhan lohh",
-            "NPM" =>"10120999",
-            "class_id" =>"2",
-            "created_at" => Carbon::now(),
-            "updated_at" => Carbon::now()
-        ]);
+        // identitasMahasiswa::insert([
+        //     "nama" =>"Dimas Ramadhan lohh",
+        //     "NPM" =>"10120999",
+        //     "class_id" =>"2",
+        //     "created_at" => Carbon::now(),
+        //     "updated_at" => Carbon::now()
+        // ]);
+
+        identitasMahasiswa::factory()->count(10)->create();
     }
 }
