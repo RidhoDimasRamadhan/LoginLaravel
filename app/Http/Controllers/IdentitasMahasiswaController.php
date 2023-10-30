@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\Identitas;
 use Illuminate\Http\Request;
 use App\Models\IdentitasMahasiswa;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
 use Database\Seeders\identitasMahasiswa as SeedersIdentitasMahasiswa;
 
 class IdentitasMahasiswaController extends Controller
@@ -85,8 +86,17 @@ class IdentitasMahasiswaController extends Controller
                 // map (berfungsi untuk looping atau perulanagan)
 
             // dd($angka);
-            $identitasMahasiswa_list = identitasMahasiswa::all();
-            return view('identitas_Mahasiswa',['studentList' => $identitasMahasiswa_list]);
+            $identitasMahasiswa_list=identitasMahasiswa::all()->sortBy('nama');
+            // $identitasMahasiswa_list = $asc::orderBy('nama')->get();
 
+            // $identitasMahasiswa_list = identitasMahasiswa::with('Identitas')->get();
+            return view('identitas_Mahasiswa',['studentList' => $identitasMahasiswa_list,'judul'=>'identitas_Mahasiswa']);
+
+    }
+
+    public function mahasiswa_detail($id){
+            $mahasiswa_detail_list = IdentitasMahasiswa::with(['class','extraculicullar'])->find($id);
+            // dd($mahasiswa_detail_list)->all();
+            return view('Page_Detail/identitas-mahasiswa-detail',['mahasiswa_detail_list'=>$mahasiswa_detail_list,'judul'=>'identitas_Mahasiswa']);       
     }
 }

@@ -24,7 +24,7 @@ class IdentitasMahasiswaFactory extends Factory
             // untuk cara melihat faker ini segala macem bisa dilihat di facker php
             "nama" => $faker->name(),
             "NPM" => mt_rand(0000001,999999),
-            "class_id" => Arr::random([1,2]),
+            "class_id" => Arr::random([1,2,3,4]),
         ];
     }
 }
